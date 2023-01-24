@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { ContentList } from './helper-files/content-list';
+import { ContentList } from '../helper-files/content-list';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './content-card/content-card.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-content-card',
+  templateUrl: './content-card.component.html',
+  styleUrls: ['./content-card.component.css']
 })
-export class AppComponent {
-  title = 'favorite-movies';
-
-  // temp: content card logic in root component
+export class ContentCardComponent {
  contentList = new ContentList(); 
+ name = 'name';
 
   constructor() {
     this.contentList.add({
@@ -49,4 +47,6 @@ export class AppComponent {
     }
     return content;
   }
+  // q: how can I use above method in html file?
+  // a: use interpolation {{ renderContent() }}
 }
