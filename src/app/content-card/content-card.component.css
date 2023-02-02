@@ -1,0 +1,77 @@
+.content-card {
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 500ms;
+
+  cursor: pointer;
+}
+
+.first {
+  border: 2px solid black;
+}
+
+.content-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.content-card .content-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 0.25em;
+
+  overflow: hidden;
+  border-radius: 0.25em;
+}
+
+.content {
+  padding: 1em;
+}
+
+.content-card .content-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-card-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0;
+}
+
+.content-card-header h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
+}
+
+.content-card-header h4 {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0.75em;
+}
+
+.content-tags {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: left;
+  padding: 0;
+}
+
+.content-tag {
+  padding: 0.25em 0.5em;
+  border-radius: 999px;
+  color: white;
+  background-color: #000;
+  font-size: 0.75em;
+}
+
+.content-description {
+  padding: 0.5em 0;
+  color: rgb(93, 93, 93);
+}

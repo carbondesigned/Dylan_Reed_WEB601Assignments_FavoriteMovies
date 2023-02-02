@@ -1,7 +1,24 @@
-<p>content-card works!</p>
-
-<!-- <ul *ngFor="let content of contentList; let i = index"> -->
-<!--   <li>{{content.title}}</li> -->
-<!-- </ul> -->
-
-{{ renderContent() }}
+<!-- <p>{{ content?.title }}</p> -->
+<!-- clicking a content-card will log the id -->
+<div
+  ngClass="{{ content?.id === 1 ? 'content-card first' : 'content-card' }}"
+  (click)="onPress()"
+>
+  <div class="content-img">
+    <img src="{{ content?.imgURL }}" alt="{{ content?.title }}" />
+  </div>
+  <div class="content">
+    <div class="content-card-header">
+      <h3>{{ content?.title }}</h3>
+      <h4>{{ content?.director }}</h4>
+      <ul class="content-tags">
+        <li class="content-tag" *ngFor="let tag of content?.tags">
+          {{ tag }}
+        </li>
+      </ul>
+    </div>
+    <p class="content-description">
+      {{ content?.description }}
+    </p>
+  </div>
+</div>
