@@ -1,8 +1,25 @@
 <section class="section">
   <h2>My Favorite Movies</h2>
+
+  <div>
+    <label for="search">Search</label>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search"
+      (input)="handleInput($event)"
+    />
+    <button (click)="searchContent()">Search</button>
+  </div>
+  <p *ngIf="isAvailable">Available</p>
+  <p *ngIf="!isAvailable">Not Available</p>
   <ul class="content-list">
-    <li *ngFor="let content of contentList">
-      <app-content-card [content]="content"> ></app-content-card>
+    <li *ngFor="let content of contentList | contentFilter">
+      <ul>
+        <li *ngFor="let c of content.content">
+          <app-content-card [content]="c"></app-content-card>
+        </li>
+      </ul>
     </li>
   </ul>
 </section>

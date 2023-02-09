@@ -75,3 +75,23 @@
   padding: 0.5em 0;
   color: rgb(93, 93, 93);
 }
+
+.thriller {
+  background-color: #f5c518;
+}
+
+.epic {
+  background-color: #a018f5;
+}
+
+.mind-bending {
+  background-color: #18f5c5;
+}
+
+.classic {
+  background-color: #f51818;
+}
+
+.action {
+  background-color: #1839f5;
+}

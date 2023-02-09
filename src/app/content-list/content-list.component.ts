@@ -7,6 +7,8 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.css'],
 })
 export class ContentListComponent {
+  public isAvailable = false;
+  public searchTerm = '';
   contentList: Content[] = [
     {
       id: 1,
@@ -40,7 +42,17 @@ export class ContentListComponent {
       type: 'classic',
       tags: ['crime', 'drama'],
     },
-    // generate 3 more random movies
+    {
+      id: 4,
+      title: 'Transformers',
+      description:
+        'Autobots must escape sight from a bounty hunter who has taken control of the human sercret agency: SHIELD.',
+      director: 'Michael Bay',
+      imgURL:
+        'http://images5.fanpop.com/image/photos/25700000/Transformers-1-The-Saga-Begins-movies-cars-guns-backgrounds-25784442-1600-1200.jpg',
+      type: 'action',
+      tags: ['war', 'drama'],
+    },
     {
       id: 4,
       title: 'Fury',
@@ -74,4 +86,27 @@ export class ContentListComponent {
       tags: ['crime', 'drama'],
     },
   ];
+
+  constructor() {
+    this.isAvailable = false;
+    this.searchTerm = '';
+  }
+
+  handleInput(event: any) {
+    this.searchTerm = event.target.value;
+  }
+
+  searchContent() {
+    console.log(this.searchTerm);
+
+    this.contentList.forEach((content) => {
+      if (content.title.includes(this.searchTerm)) {
+        this.isAvailable = true;
+      } else if (this.searchTerm === '') {
+        this.isAvailable = false;
+      } else {
+        this.isAvailable = false;
+      }
+    });
+  }
 }

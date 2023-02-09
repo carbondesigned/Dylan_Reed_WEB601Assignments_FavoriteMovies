@@ -5,7 +5,7 @@
   <div class="content-img">
     <img src="{{ content?.imgURL }}" alt="{{ content?.title }}" />
   </div>
-  <div class="content">
+  <div ngClass="{{ content?.type }} content">
     <div class="content-card-header">
       <h3>{{ content?.title }}</h3>
       <h4>{{ content?.director }}</h4>
