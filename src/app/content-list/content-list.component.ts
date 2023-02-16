@@ -85,6 +85,16 @@ export class ContentListComponent {
       type: 'thriller',
       tags: ['crime', 'drama'],
     },
+    {
+      id: 7,
+      title: 'American Psycho',
+      description:
+        'A wealthy New York investment banking executive hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.',
+      director: 'Mary Harron',
+      imgURL: undefined,
+      type: 'thriller',
+      tags: ['crime', 'drama'],
+    },
   ];
 
   constructor() {

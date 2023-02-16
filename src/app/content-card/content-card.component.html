@@ -1,10 +1,23 @@
 <div
   ngClass="{{ content?.id === 1 ? 'content-card first' : 'content-card' }}"
   (click)="onPress()"
+  appHoverAffect
 >
   <div class="content-img">
-    <img src="{{ content?.imgURL }}" alt="{{ content?.title }}" />
+    <!-- <img src="{{ content?.imgURL }}" alt="{{ content?.title }}" /> -->
+    <!-- if the imgURL doesn't exist show a deafult image using ngIf-->
+    <img
+      *ngIf="content?.imgURL"
+      src="{{ content?.imgURL }}"
+      alt="{{ content?.title }}"
+    />
+    <img
+      *ngIf="!content?.imgURL"
+      src="https://via.placeholder.com/150"
+      alt="{{ content?.title }}"
+    />
   </div>
+  <p>{{ content?.type }}</p>
   <div ngClass="{{ content?.type }} content">
     <div class="content-card-header">
       <h3>{{ content?.title }}</h3>
