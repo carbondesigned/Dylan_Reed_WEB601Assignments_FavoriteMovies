@@ -1,6 +1,10 @@
 <section class="section">
   <h2>My Favorite Movies</h2>
 
+  <app-create-content
+    (contentAdded)="onContentAdded($event)"
+  ></app-create-content>
+
   <div>
     <label for="search">Search</label>
     <input
@@ -14,12 +18,15 @@
   <p *ngIf="isAvailable">Available</p>
   <p *ngIf="!isAvailable">Not Available</p>
   <ul class="content-list">
-    <li *ngFor="let content of contentList | contentFilter">
+    <!-- <li *ngFor="let content of contentList | contentFilter">
       <ul>
         <li *ngFor="let c of content.content">
           <app-content-card [content]="c"></app-content-card>
         </li>
       </ul>
+    </li> -->
+    <li *ngFor="let content of contentList">
+      <app-content-card [content]="content"></app-content-card>
     </li>
   </ul>
 </section>

@@ -9,6 +9,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentListComponent {
   public isAvailable = false;
   public searchTerm = '';
+
   contentList: Content[] = [
     {
       id: 1,
@@ -104,6 +105,16 @@ export class ContentListComponent {
 
   handleInput(event: any) {
     this.searchTerm = event.target.value;
+  }
+
+  onContentAdded(newContent: Content) {
+    // Add new content item to the list
+    this.contentList.push(newContent);
+
+    // Log success message to console
+    console.log(`Added ${newContent.title} successfully`);
+
+    console.log(this.contentList);
   }
 
   searchContent() {

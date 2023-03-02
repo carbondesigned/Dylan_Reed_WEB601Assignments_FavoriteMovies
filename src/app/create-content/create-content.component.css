@@ -1,0 +1,6 @@
+div {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+  gap: 0.25rem;
+}
