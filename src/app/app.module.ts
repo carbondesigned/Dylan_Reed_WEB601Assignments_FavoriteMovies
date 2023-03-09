@@ -9,6 +9,8 @@ import { ContentFilterPipe } from './content-list/content-filter.pipe';
 import { HoverAffectDirective } from './hover-affect.directive';
 import { CreateContentComponent } from './create-content/create-content.component';
 import { FormsModule } from '@angular/forms';
+import { MovieService } from './movie.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { FormsModule } from '@angular/forms';
     ContentFilterPipe,
     HoverAffectDirective,
     CreateContentComponent,
+    MessagesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [MovieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

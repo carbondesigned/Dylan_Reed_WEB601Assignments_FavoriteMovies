@@ -1,5 +1,5 @@
 <div
-  ngClass="{{ content?.id === 1 ? 'content-card first' : 'content-card' }}"
+  ngClass="{{ movie?.id === 1 ? 'content-card first' : 'content-card' }}"
   (click)="onPress()"
   appHoverAffect
 >
@@ -7,29 +7,29 @@
     <!-- <img src="{{ content?.imgURL }}" alt="{{ content?.title }}" /> -->
     <!-- if the imgURL doesn't exist show a deafult image using ngIf-->
     <img
-      *ngIf="content?.imgURL"
-      src="{{ content?.imgURL }}"
-      alt="{{ content?.title }}"
+      *ngIf="movie?.imgURL"
+      src="{{ movie?.imgURL }}"
+      alt="{{ movie?.title }}"
     />
     <img
-      *ngIf="!content?.imgURL"
+      *ngIf="!movie?.imgURL"
       src="https://via.placeholder.com/150"
-      alt="{{ content?.title }}"
+      alt="{{ movie?.title }}"
     />
   </div>
-  <p>{{ content?.type }}</p>
-  <div ngClass="{{ content?.type }} content">
+  <p>{{ movie?.type }}</p>
+  <div ngClass="{{ movie?.type }} content">
     <div class="content-card-header">
-      <h3>{{ content?.title }}</h3>
-      <h4>{{ content?.director }}</h4>
+      <h3>{{ movie?.title }}</h3>
+      <h4>{{ movie?.director }}</h4>
       <ul class="content-tags">
-        <li class="content-tag" *ngFor="let tag of content?.tags">
+        <li class="content-tag" *ngFor="let tag of movie?.tags">
           {{ tag }}
         </li>
       </ul>
     </div>
     <p class="content-description">
-      {{ content?.description }}
+      {{ movie?.description }}
     </p>
   </div>
 </div>

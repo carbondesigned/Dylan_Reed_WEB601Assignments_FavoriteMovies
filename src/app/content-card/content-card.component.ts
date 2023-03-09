@@ -7,14 +7,14 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.css'],
 })
 export class ContentCardComponent {
-  @Input() content: Content | undefined;
+  @Input() movie: Content | undefined;
 
   constructor() {
-    console.log(this.content);
+    console.log(this.movie);
   }
 
   onPress() {
     console.log('button pressed');
-    console.log(this.content?.id, this.content?.title);
+    console.log(this.movie?.id, this.movie?.title);
   }
 }

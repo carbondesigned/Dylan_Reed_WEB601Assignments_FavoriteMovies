@@ -17,6 +17,7 @@
   </div>
   <p *ngIf="isAvailable">Available</p>
   <p *ngIf="!isAvailable">Not Available</p>
+  <app-content-card class="featured" [movie]="featuredMovie"></app-content-card>
   <ul class="content-list">
     <!-- <li *ngFor="let content of contentList | contentFilter">
       <ul>
@@ -25,8 +26,8 @@
         </li>
       </ul>
     </li> -->
-    <li *ngFor="let content of contentList">
-      <app-content-card [content]="content"></app-content-card>
+    <li *ngFor="let movie of movies">
+      <app-content-card [movie]="movie"></app-content-card>
     </li>
   </ul>
 </section>

@@ -8,6 +8,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class CreateContentComponent {
   @Output() contentAdded = new EventEmitter<Content>();
+
   newContent: Content = {
     id: 0,
     title: '',
