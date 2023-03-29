@@ -4,6 +4,10 @@
   <app-create-content
     (contentAdded)="onContentAdded($event)"
   ></app-create-content>
+  <app-modify-content-component
+    [currentContent]=""
+    [movies]="movies"
+  ></app-modify-content-component>
 
   <div>
     <label for="search">Search</label>

@@ -1,6 +1,7 @@
 declare const require: any;
 
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { MessagesService } from './messages.service';
@@ -9,18 +10,25 @@ import { MessagesService } from './messages.service';
   providedIn: 'root',
 })
 export class MovieService {
-  constructor(private messagesService: MessagesService) {}
+  private movies: Content[] = [];
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
+  constructor(private http: HttpClient) {}
 
-  getMovies(): Observable<any[]> {
-    const movies = of(require('./contentDb/movies.json'));
-    this.messagesService.add('Content array loaded!');
-    return movies;
+  getMovies(): Observable<Content[]> {
+    return this.http.get<Content[]>('api/movies');
+  }
+
+  addMovie(movie: Content): Observable<Content> {
+    return this.http.post<Content>('api/movies', movie, this.httpOptions);
+  }
+
+  updateMovie(movie: Content): Observable<any> {
+    return this.http.put(`api/movies/${movie.id}`, movie, this.httpOptions);
   }
 
   getMovieById(id: number): Observable<any> {
-    const movies = require('./contentDb/movies.json');
-    const movie = movies.find((m: Content) => m.id === id);
-    this.messagesService.add(`Content Item at id: ${id}`);
-    return of(movie);
+    return this.http.get<Content>(`api/movies/${id}`);
   }
 }

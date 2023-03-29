@@ -8,10 +8,9 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentCardComponent {
   @Input() movie: Content | undefined;
+  public isCurrentSelectedMovie = false;
 
-  constructor() {
-    console.log(this.movie);
-  }
+  constructor() {}
 
   onPress() {
     console.log('button pressed');

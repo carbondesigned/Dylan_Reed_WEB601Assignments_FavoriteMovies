@@ -29,18 +29,22 @@ export class ContentListComponent implements OnInit {
   }
 
   onContentAdded(newContent: Content) {
-    // Add new content item to the list
-    this.movies.push(newContent);
+    this.movieService.addMovie(newContent).subscribe((movie) => {
+      this.movies.push(movie);
+    });
+  }
 
-    // Log success message to console
-    console.log(`Added ${newContent.title} successfully`);
-
-    console.log(this.movies);
+  updateContent(updatedContent: Content) {
+    this.movieService.updateMovie(updatedContent).subscribe((updatedMovie) => {
+      const index = this.movies.findIndex(
+        (movie) => movie.id === updatedMovie.id
+      );
+      this.movies[index] = updatedMovie;
+    });
   }
 
   searchContent() {
     console.log(this.searchTerm);
-
     this.movies.forEach((movie) => {
       if (movie.title.includes(this.searchTerm)) {
         this.isAvailable = true;
