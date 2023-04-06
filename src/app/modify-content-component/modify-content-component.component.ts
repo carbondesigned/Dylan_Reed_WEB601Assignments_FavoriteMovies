@@ -1,5 +1,14 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatInput } from '@angular/material/input';
+import { AddContentDialogComponent } from '../add-content-dialogue/add-content-dialogue.component';
 
 @Component({
   selector: 'app-modify-content-component',
@@ -11,7 +20,23 @@ export class ModifyContentComponentComponent {
   @Input() movies: Content[] = [];
   @Input() currentContent: Content | undefined;
 
-  constructor() {}
+  // Step 2: Create a new method to open the dialog
+  constructor(public dialog: MatDialog) {}
+
+  openAddContentDialog() {
+    const dialogRef = this.dialog.open(AddContentDialogComponent, {
+      width: '500px',
+      data: {},
+    });
+
+    // Listen for dialog close event
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // Add content to simulated server
+        this.updatedContentAdded.emit(result);
+      }
+    });
+  }
 
   updatedContent: Content = {
     id: 0,

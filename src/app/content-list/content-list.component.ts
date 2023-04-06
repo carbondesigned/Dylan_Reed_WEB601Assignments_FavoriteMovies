@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { MovieService } from '../movie.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddContentDialogComponent } from '../add-content-dialogue/add-content-dialogue.component';
 
 @Component({
   selector: 'app-content-list',
@@ -13,7 +15,7 @@ export class ContentListComponent implements OnInit {
   public isAvailable = false;
   public searchTerm = '';
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private dialog: MatDialog) {
     this.isAvailable = false;
     this.searchTerm = '';
   }
@@ -21,6 +23,11 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((movies) => {
       this.movies = movies;
+    });
+  }
+  openAddContentDialog(): void {
+    const dialogRef = this.dialog.open(AddContentDialogComponent, {
+      width: '500px',
     });
   }
 

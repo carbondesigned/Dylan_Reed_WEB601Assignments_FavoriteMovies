@@ -1,6 +1,6 @@
 {
   "name": "favorite-movies",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@angular/animations": "^15.1.0",
+    "@angular/cdk": "~15.2.6",
     "@angular/common": "^15.1.0",
     "@angular/compiler": "^15.1.0",
     "@angular/core": "^15.1.0",
     "@angular/forms": "^15.1.0",
+    "@angular/material": "~15.2.6",
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",

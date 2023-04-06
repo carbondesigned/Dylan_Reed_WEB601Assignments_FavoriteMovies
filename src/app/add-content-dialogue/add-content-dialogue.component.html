@@ -1,0 +1,72 @@
+<h2 mat-dialog-title>Add Movie</h2>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <label>ID:</label>
+      <input
+        matInput
+        type="text"
+        name="contentId"
+        [(ngModel)]="newContent.id"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <label>Title:</label>
+      <input
+        matInput
+        type="text"
+        name="contentTitle"
+        [(ngModel)]="newContent.title"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <label>Description:</label>
+      <textarea
+        matInput
+        name="contentDescription"
+        [(ngModel)]="newContent.description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <label>Image URL:</label>
+      <input
+        matInput
+        type="text"
+        name="contentImgURL"
+        [(ngModel)]="newContent.imgURL"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <label>Type:</label>
+      <input
+        matInput
+        type="text"
+        name="contentType"
+        [(ngModel)]="newContent.type"
+      />
+    </mat-form-field>
+
+    <!-- <mat-form-field>
+    <label>Tags:</label>
+    <input type="text" name="contentTags" [(ngModel)]="newContent.tags" />
+  </mat-form-field> -->
+
+    <mat-form-field>
+      <label>Director:</label>
+      <input
+        matInput
+        type="text"
+        name="contentDirector"
+        [(ngModel)]="newContent.director"
+      />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" (click)="addContent()">Add</button>
+</div>

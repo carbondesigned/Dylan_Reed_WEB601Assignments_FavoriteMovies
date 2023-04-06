@@ -1,23 +1,31 @@
 <section class="section">
   <h2>My Favorite Movies</h2>
 
-  <app-create-content
+  <!-- <app-create-content
     (contentAdded)="onContentAdded($event)"
-  ></app-create-content>
-  <app-modify-content-component
-    [currentContent]=""
-    [movies]="movies"
-  ></app-modify-content-component>
+  ></app-create-content> -->
+  <button mat-raised-button color="primary" (click)="openAddContentDialog()">
+    Add New Movie
+  </button>
 
   <div>
-    <label for="search">Search</label>
-    <input
-      type="text"
-      id="search"
-      placeholder="Search"
-      (input)="handleInput($event)"
-    />
-    <button (click)="searchContent()">Search</button>
+    <mat-form-field>
+      <mat-label matTheme="my-custom-theme">Search</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Search"
+        (input)="handleInput($event)"
+      />
+      <button
+        mat-raised-button
+        color="primary"
+        matTheme="my-custom-theme"
+        (click)="searchContent()"
+      >
+        Search
+      </button>
+    </mat-form-field>
   </div>
   <p *ngIf="isAvailable">Available</p>
   <p *ngIf="!isAvailable">Not Available</p>

@@ -15,6 +15,11 @@ import { FormsModule } from '@angular/forms';
 import { MovieService } from './movie.service';
 import { MessagesComponent } from './messages/messages.component';
 import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { AddContentDialogComponent } from './add-content-dialogue/add-content-dialogue.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,8 +31,12 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     CreateContentComponent,
     MessagesComponent,
     ModifyContentComponentComponent,
+    AddContentDialogComponent,
   ],
   imports: [
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -35,6 +44,7 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [MovieService],
   bootstrap: [AppComponent],

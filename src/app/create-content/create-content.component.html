@@ -1,27 +1,64 @@
 <div>
-  <label for="contentId">ID:</label>
-  <input type="text" name="contentId" [(ngModel)]="newContent.id" />
+  <mat-form-field>
+    <label>ID:</label>
+    <input matInput type="text" name="contentId" [(ngModel)]="newContent.id" />
+  </mat-form-field>
 
-  <label for="contentTitle">Title:</label>
-  <input type="text" name="contentTitle" [(ngModel)]="newContent.title" />
+  <mat-form-field>
+    <label>Title:</label>
+    <input
+      matInput
+      type="text"
+      name="contentTitle"
+      [(ngModel)]="newContent.title"
+    />
+  </mat-form-field>
 
-  <label for="contentDescription">Description:</label>
-  <textarea
-    name="contentDescription"
-    [(ngModel)]="newContent.description"
-  ></textarea>
+  <mat-form-field>
+    <label>Description:</label>
+    <textarea
+      matInput
+      name="contentDescription"
+      [(ngModel)]="newContent.description"
+    ></textarea>
+  </mat-form-field>
 
-  <label for="contentImgURL">Image URL:</label>
-  <input type="text" name="contentImgURL" [(ngModel)]="newContent.imgURL" />
+  <mat-form-field>
+    <label>Image URL:</label>
+    <input
+      matInput
+      type="text"
+      name="contentImgURL"
+      [(ngModel)]="newContent.imgURL"
+    />
+  </mat-form-field>
 
-  <label for="contentType">Type:</label>
-  <input type="text" name="contentType" [(ngModel)]="newContent.type" />
+  <mat-form-field>
+    <label>Type:</label>
+    <input
+      matInput
+      type="text"
+      name="contentType"
+      [(ngModel)]="newContent.type"
+    />
+  </mat-form-field>
 
-  <!-- <label for="contentTags">Tags:</label>
-  <input type="text" name="contentTags" [(ngModel)]="newContent.tags" /> -->
+  <!-- <mat-form-field>
+  <label>Tags:</label>
+  <input type="text" name="contentTags" [(ngModel)]="newContent.tags" />
+</mat-form-field> -->
 
-  <label for="contentDirector">Director:</label>
-  <input type="text" name="contentDirector" [(ngModel)]="newContent.director" />
+  <mat-form-field>
+    <label>Director:</label>
+    <input
+      matInput
+      type="text"
+      name="contentDirector"
+      [(ngModel)]="newContent.director"
+    />
+  </mat-form-field>
 
-  <button (click)="addContent()">Add Content</button>
+  <button mat-raised-button color="primary" (click)="addContent()">
+    Add Content
+  </button>
 </div>
