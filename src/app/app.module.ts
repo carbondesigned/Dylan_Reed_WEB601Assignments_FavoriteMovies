@@ -20,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AddContentDialogComponent } from './add-content-dialogue/add-content-dialogue.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MessagesComponent,
     ModifyContentComponentComponent,
     AddContentDialogComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     MatDialogModule,

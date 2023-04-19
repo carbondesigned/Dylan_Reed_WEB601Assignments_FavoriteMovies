@@ -17,19 +17,25 @@
       alt="{{ movie?.title }}"
     />
   </div>
-  <p>{{ movie?.type }}</p>
-  <div ngClass="{{ movie?.type }} content">
-    <div class="content-card-header">
-      <h3>{{ movie?.title }}</h3>
-      <h4>{{ movie?.director }}</h4>
-      <ul class="content-tags">
-        <li class="content-tag" *ngFor="let tag of movie?.tags">
-          {{ tag }}
-        </li>
-      </ul>
+  <div
+    ngClass="{{ movie?.id === 1 ? 'content-card first' : 'content-card' }}"
+    (click)="onPress()"
+    appHoverAffect
+  >
+    <div class="content-img"></div>
+    <p>{{ movie?.type }}</p>
+    <div ngClass="{{ movie?.type }} content">
+      <div class="content-card-header">
+        <h3>
+          <a [routerLink]="['/detail', movie?.id ?? 0]">{{ movie?.title }}</a>
+        </h3>
+        <h4>{{ movie?.director }}</h4>
+        <ul class="content-tags">
+          <li class="content-tag" *ngFor="let tag of movie?.tags">
+            {{ tag }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <p class="content-description">
-      {{ movie?.description }}
-    </p>
   </div>
 </div>
